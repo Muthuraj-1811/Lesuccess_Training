@@ -1,0 +1,80 @@
+import java.util.*;
+
+public class Assignment2 {
+    public static void main(String[] args) {
+
+        // 1. Check Whether a Character is a Vowel or Consonant
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter character: ");
+        char c= sc.next().toLowerCase().charAt(0);
+
+        if (c >= 'a' && c <= 'z') {
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                System.out.println(c + " is a Vowel");
+            } else {
+                System.out.println(c + " is a Consonant");
+            }
+        } else {
+            System.out.println("Invalid letter");
+        }
+
+        // 2. Print the Grade Based on Marks
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter marks: ");
+        int marks = sc.nextInt();
+        if (marks >= 90 && marks <= 100) {
+            System.out.println("Grade A");
+        } else if (marks >= 75) {
+            System.out.println("Grade B");
+        } else if (marks >= 60) {
+            System.out.println("Grade C");
+        } else if (marks >= 40) {
+            System.out.println("Grade D");
+        } else {
+            System.out.println("Fail");
+        } 
+
+        // 3. Simple Interest or Compound Interest Calculator
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("1. Simple Interest");
+        System.out.println("2. Compound Interest");
+        System.out.print("Enter your choice 1 or 2: ");
+        int choice = sc.nextInt();
+        System.out.print("p: ");
+        double p = sc.nextDouble();
+        System.out.print("n: ");
+        double n = sc.nextDouble();
+        System.out.print("r: ");
+        double r = sc.nextDouble();
+        if (choice == 1) {
+            double si = (p * n * r) / 100;
+            System.out.println("Simple Interest: " + si);
+        } else if (choice == 2) {
+            double ci = p * Math.pow((1 + r / 100), n) - p;
+            System.out.println("Compound Interest: " + ci);
+        } else {
+            System.out.println("Invalid choice.");
+        }
+
+        // 4. Print All Prime Numbers from 1 to N
+       
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        System.out.println("Prime numbers from 1 to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            boolean isPrime = true;
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}   
