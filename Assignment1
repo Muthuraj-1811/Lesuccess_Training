@@ -1,0 +1,50 @@
+import java.util.*;
+public class BasicJava {
+    public static void main(String[] args) {
+
+        // 1.Type Conversion Challenge
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int i = sc.nextInt();
+        System.out.print("Enter a float value: ");
+        float f = sc.nextFloat();
+        System.out.print("Enter a character: ");
+        char c = sc.next().charAt(0);
+        float sum = (float) i+ f;
+        int Ascii = i + (int) c;
+        System.out.println( sum);
+        System.out.println(Ascii);
+
+    //   2.Arithmetic Expression Evaluator
+
+         Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        double doubleVal = sc.nextDouble();
+        System.out.println("Addition: " + (num1+ num2));
+        System.out.println("Subtraction: " + (num1 - num2));
+        System.out.println("Multiplication: " + (num1 * num2));
+        System.out.println("Division: " + (num1 / num2));
+        System.out.println("Addition result multiplied with double: " +  ((num1 + num2) * doubleVal));
+
+
+        // 3. Bitwise Operator Experiment
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a: ");
+        int a = sc.nextInt();
+        System.out.print("Enter b: ");
+        int b = sc.nextInt();
+        System.out.println("Bitwise AND: " + (a & b));
+        System.out.println("Bitwise OR: " + (a | b));
+        System.out.println("Bitwise XOR: " + (a ^ b));
+        System.out.println("Left Shift a by 2: " + (a << 2));
+        System.out.println("Left Shift b by 2: " + (b << 2));
+        System.out.println("Right Shift a by 2: " + (a >> 2));
+        System.out.println("Right Shift b by 2: " + (b >> 2));
+
+    }
+}
+
+    
