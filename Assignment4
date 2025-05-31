@@ -1,0 +1,112 @@
+package javabasic;
+import java.util.*;
+
+public class assignment4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // 1. Palindrome Check
+        String s = sc.nextLine();
+        String rev = "";
+        for (int i = s.length() - 1; i >= 0; i--) {
+            rev += s.charAt(i);
+        }
+        if (s.equals(rev)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+
+        // 2. Count vowels and consonants
+        String line = sc.nextLine().toLowerCase();
+        int vowels = 0, consonants = 0;
+        for (int i = 0; i < line.length(); i++) {
+            char c = line.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowels++;
+            } else if (c >= 'a' && c <= 'z') {
+                consonants++;
+            }
+        }
+        System.out.println("Vowels: " + vowels + ", Consonants: " + consonants);
+
+        // 3. Remove duplicates
+        String str = sc.next();
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (result.indexOf(c) == -1) {
+                result += c;
+            }
+        }
+        System.out.println(result);
+
+        // 4. Reverse a string
+        String Rev = sc.next();
+        String reversed = "";
+        for (int i = Rev.length() - 1; i >= 0; i--) {
+            reversed += Rev.charAt(i);
+        }
+        System.out.println(reversed);
+
+        
+
+        // 5. Anagram Check (two strings input)
+        String a1 = sc.nextLine();
+        String a2 = sc.nextLine();
+
+        a1 = a1.replaceAll("\\s", "").toLowerCase();
+        a2 = a2.replaceAll("\\s", "").toLowerCase();
+
+        if (a1.length() != a2.length()) {
+            System.out.println("Not Anagrams");
+        } else {
+            char[] c1 = a1.toCharArray();
+            char[] c2 = a2.toCharArray();
+            Arrays.sort(c1);
+            Arrays.sort(c2);
+            if (Arrays.equals(c1, c2)) {
+                System.out.println("Anagrams");
+            } else {
+                System.out.println("Not Anagrams");
+            }
+        }
+
+        // 6. Capitalize first letter of each word
+        String sentence1 = sc.nextLine();
+        String[] words1 = sentence1.split(" ");
+        String result1 = "";
+        for (int i = 0; i < words1.length; i++) {
+            String word = words1[i];
+            if (word.length() > 0) {
+                String capitalizedWord = word.substring(0, 1).toUpperCase() + word.substring(1);
+                result1 += capitalizedWord + " ";
+            }
+        }
+        System.out.println(result1.trim());
+
+        // 7. Count word occurrences
+        String text = sc.nextLine();
+        String word = sc.next();
+        String[] w = text.split(" ");
+        int count = 0;
+        for (int i = 0; i < w.length; i++) {
+            if (w[i].equals(word)) {
+                count++;
+            }
+        }
+        System.out.println(count);
+
+        // 8. Toggle case
+        String toggle = sc.next();
+        String toggled = "";
+        for (int i = 0; i < toggle.length(); i++) {
+            char c = toggle.charAt(i);
+            if (Character.isUpperCase(c)) toggled += Character.toLowerCase(c);
+            else toggled += Character.toUpperCase(c);
+        }
+        System.out.println(toggled);
+
+       
+    }
+}
