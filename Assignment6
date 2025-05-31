@@ -1,0 +1,114 @@
+package javabasic;
+import java.util.*;
+
+public class assignment6 {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+
+//      1. Find the Majority Element in an Array
+		
+		
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+ 
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        
+        int count = 1;
+        int c = arr[0];
+
+        for (int i = 1; i < n; i++) {
+            if (arr[i] == c) {
+                count++;
+            } else {
+                count--;
+                if (count == 0) {
+                    c = arr[i];
+                    count = 1;
+                }
+            }
+        }
+
+        int freq = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == c) {
+                freq++;
+            }
+        }
+
+        if (freq > n / 2) {
+            System.out.println(c);
+        } else {
+            System.out.println("No majority element");
+        }
+
+        
+        
+//       2.Solve the Maximum Subarray Sum Problem (Kadane&#39;s Algorithm)
+        
+        int num = sc.nextInt();
+        int[] nums = new int[num];
+
+        for (int i = 0; i < num; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        int maxSum = nums[0];    
+        int currentSum = 0;
+
+        for (int i = 0; i < num; i++) {
+            currentSum += nums[i];
+
+            if (currentSum > maxSum) {
+                maxSum = currentSum;
+            }
+
+            if (currentSum < 0) {
+                currentSum = 0;
+            }
+        }
+
+        System.out.println(maxSum);
+        
+//        3.Find the First Non-Repeating Character in a String
+        
+        Scanner scanner = new Scanner(System.in);
+
+        String s = scanner.nextLine();
+
+        int[] f = new int[256];
+        
+        for (int i = 0; i < s.length(); i++) {
+            f[s.charAt(i)]++;
+        }
+
+        int index = -1;
+        for (int i = 0; i < s.length(); i++) {
+            if (f[s.charAt(i)] == 1) {
+                index = i;
+                break;
+            }
+        }
+
+        System.out.println(index);
+        
+//        4.
+        
+       
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        if (s1.length() == s2.length() && (s1 + s1).contains(s2)) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+        
+	}
+
+}
