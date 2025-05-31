@@ -1,0 +1,99 @@
+package javabasic;
+
+
+//	Q1. Define a class Calculator
+
+class Calculator {
+    int result; 
+    static int operationCount = 0; 
+
+    
+    void add(int a, int b) {
+        result = a + b;
+        operationCount++;
+        System.out.println("Result: " + result);
+    }
+
+ 
+    static void displayOperationCount() {
+        System.out.println("Total operations performed: " + operationCount);
+    }
+}
+
+public class assignment7 {
+    public static void main(String[] args) {
+     
+        Calculator c1 = new Calculator();
+        c1.add(5, 10); 
+
+
+        Calculator c2 = new Calculator();
+        c2.add(20, 30); 
+        Calculator.displayOperationCount(); 
+
+        System.out.println("Result stored in c1: " + c1.result); 
+        System.out.println("Result stored in c2: " + c2.result);
+    }
+}
+
+
+//Q2. Create a class BankAccount with private balance and methods to deposit and getBalance.
+
+
+class BankAccount {
+    private double balance;  
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount");
+        }
+    }
+
+ 
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class assignment7 {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+        account.deposit(1500);
+        System.out.println("Balance: " + account.getBalance());
+        // System.out.println("Accessing balance directly: " + account.balance);
+    }
+}
+
+// Q3. Create a class Student with roll number and name.
+
+class Student {
+	
+    int rollNumber;
+    String name;
+
+    public Student(int rollNumber, String name) {
+        this.rollNumber = rollNumber;
+        this.name = name;
+    }
+
+    public Student(int rollNumber) {
+        this.rollNumber = rollNumber;
+        this.name = "Unknown";
+    }
+
+    public void display() {
+        System.out.println("Roll Number: " + rollNumber + ", Name: " + name);
+    }
+}
+
+public class assignment7 {
+    public static void main(String[] args) {
+       
+        Student s1 = new Student(101, "Alice");
+        Student s2 = new Student(102);
+        s1.display();
+        s2.display();
+    }
+}
