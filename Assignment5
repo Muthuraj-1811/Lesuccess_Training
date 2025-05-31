@@ -1,0 +1,80 @@
+package javabasic;
+import java.util.Scanner;
+
+public class assignment5 {
+
+    // Question 1: Count digits in a number using recursion
+    static int countDigits(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        return 1 + countDigits(n / 10);
+    }
+
+    // Question 2: Check palindrome using recursion
+    static boolean isPalindrome(String s, int start, int end) {
+        if (start >= end) {
+            return true;
+        }
+        if (s.charAt(start) != s.charAt(end)) {
+            return false;
+        }
+        return isPalindrome(s, start + 1, end - 1);
+    }
+
+    // Question 3: Calculate power (a^b) using recursion
+    static int power(int a, int b) {
+        if (b == 0) {
+            return 1;
+        }
+        return a * power(a, b - 1);
+    }
+
+    // Question 4: Count occurrences of a character in a string using recursion
+    static int countChar(String s, char c, int index) {
+        if (index == s.length()) {
+            return 0;
+        }
+        int count = (s.charAt(index) == c) ? 1 : 0;
+        return count + countChar(s, c, index + 1);
+    }
+
+    public static void main(String[] args) {
+    	
+    	System.out.println(" Question 1: Count digits in a number using recursion");
+        Scanner sc = new Scanner(System.in);
+
+        // Question 1: Count digits in a number using recursion
+        int number = sc.nextInt();
+        if (number == 0) {
+            System.out.println("The number of digits in 0 is 1");
+        } else {
+            System.out.println("The number of digits in " + number + " is " + countDigits(number));
+        }
+        sc.nextLine(); 
+
+        // Question 2: Check palindrome using recursion
+        System.out.println("Question 2: Check palindrome using recursion");
+        String str = sc.nextLine();
+        if (isPalindrome(str, 0, str.length() - 1)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+     // Question 3: Calculate power (a^b) using recursion
+        System.out.println(" Question 3: Calculate power (a^b) using recursion");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(power(a, b));
+        sc.nextLine(); 
+
+        // Question 4: Count occurrences of a character in a string using recursion
+        System.out.println("Question 4: Count occurrences of a character in a string using recursion");
+        String text = sc.nextLine();
+        char ch = sc.next().charAt(0);
+        System.out.println(countChar(text, ch, 0));
+
+      
+    }
+}
