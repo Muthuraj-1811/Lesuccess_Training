@@ -1,0 +1,62 @@
+
+1)
+import java.util.Scanner;
+
+public class ChocolateFactory {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter number of packets: ");
+        int n = sc.nextInt();
+        int[] packets = new int[n];
+        System.out.println("enter the chocolate packets:");
+        for (int i = 0; i < n; i++) {
+            packets[i] = sc.nextInt();
+        }
+        int[] result = new int[n];
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            if (packets[i] != 0) {
+                result[index] = packets[i];
+                index++;
+            }
+        }
+        for (int i = 0; i < n; i++) {
+            packets[i] = result[i];
+        }
+        System.out.println(" moving empty one to end:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(packets[i] + " ");
+        }
+    }
+}
+------------------------------------------------------------------------
+2)
+
+import java.util.Scanner;
+public class RepeatedStringOptimal {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("enter string s ");
+        String s = sc.next(); 
+        System.out.print("enter number n ");
+        int n = sc.nextLong();
+
+        long countInS = 0;
+        int len = s.length();
+
+        for (int i = 0; i < len; i++) {
+            if (s.charAt(i) == 'a') {
+                countInS++;
+            }
+        }
+        int fullRepeats = n / len;
+        int totalA = fullRepeats * countInS;
+        int remainder = n % len;
+        for (int i = 0; i < remainder; i++) {
+            if (s.charAt(i) == 'a') {
+                totalA++;
+            }
+        }
+        System.out.println("Count of a: " + totalA);
+    }
+}
