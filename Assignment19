@@ -1,0 +1,86 @@
+//1
+Count vowels in a given string
+Input: "Groovy Programming"
+Output: 6
+
+def input = "Groovy Programming"
+def count = input.findAll(/[aeiouAEIOU]/).size()
+println "Vowel count: $count"
+
+//2
+Reverse a string without using built-in reverse()
+Input: "KnowKode"
+Output: "edoKwonK"
+
+def input = "KnowKode"
+def reversed = ""
+for (int i = input.length() - 1; i >= 0; i--) {
+	reversed += input.charAt(i)
+}
+println "Reversed string: $reversed"
+
+
+//3
+Check if a number is prime
+Input: 17
+Output: true
+
+def Prime(int num) {
+	if (num <= 1) return false
+	if (num == 2) return true
+
+	for (int i = 2; i <= Math.sqrt(num); i++) {
+		if (num % i == 0) return false
+	}
+	return true
+}
+def input = 17
+println "Is $input prime? $Prime(input)"
+
+//4
+Find common elements in two lists
+def list1 = [1, 2, 3, 4]
+def list2 = [3, 4, 5, 6]
+
+
+def list1 = [1, 2, 3, 4]
+def list2 = [3, 4, 5, 6]
+def common = list1.intersect(list2)
+println "Common elements: $common"
+
+//5
+Check if two strings are anagrams
+Input: "listen", "silent"
+Output: true
+
+def areAnagrams(str1, str2) {
+	return str1.toLowerCase().toList().sort() == str2.toLowerCase().toList().sort()
+}
+println areAnagrams("listen", "silent")
+
+//6
+Print Fibonacci series up to N terms
+Input: n = 10
+Output: 0 1 1 2 3 5 8 13 21 34
+
+def printFibonacci(int n) {
+   def a = 0, b = 1
+   for (int i = 0; i < n; i++) {
+	   print "$a "
+	   def sum = a + b
+	   a = b
+	   b = sum
+   }
+}
+printFibonacci(10)
+
+//7
+
+Check if a string is a palindrome
+ Input: "madam"
+ Output: true
+
+def Palindrome(String str) {
+	return str == str.reverse()
+}
+println Palindrome("madam")
